@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
- import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 // import product from "../Products/Product";
 import shoppingcart from "../../pages/shoppingcart/shoppingcart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,12 +16,18 @@ import {
   FaTimes,
   // FaLinkedin,
 } from "react-icons/fa";
+import selectedProduct from "../../pages/cartcompanents/shop_data";
 
 const Head = () => {
   const [nav, setNav] = useState(true);
   // const [show,setShow]=useState(false);
   // const handleShow=()=> setShow(true)
   // const handleClose=()=> setShow(false)
+  // const [len, Setlen] = useState(0);
+  // function length() {
+  //   return Setlen(selectedProduct.length);
+  // }
+  // length();
   return (
     <div className="header">
       {/* <Modal show={show} onHide={handleClose} className="-mt-[400%] block absolute mt-2 ml-[75%] "  >
@@ -81,15 +87,9 @@ const Head = () => {
             <li className="text-black">FAQ</li>
           </a>
         </ul>
-        <div>
-          {" "}
-          <form>
-            <input></input>
-          </form>
-        </div>
+        <div> </div>
         <div className={`icons h-9 flex ${!nav ? "block" : "hidden"} `}>
           <FaSearch className=" text-gray-700 rounded border-spacing-4" />
-          <FontAwesomeIcon icon={faLinkedin} />
 
           <a href="/login">
             {" "}
@@ -98,15 +98,13 @@ const Head = () => {
           <a href="/register">
             <FaHeart className="text-gray-700" path="/register" />{" "}
           </a>
-          <Link to='/shoppingcart'>
+          <Link to="/shoppingcart">
             {" "}
             <FaShoppingCart
               className="text-gray-700"
               style={{ stroke: "black", strokeWidth: "1", background: "#fff" }}
-              
             />
-            
-        </Link>
+          </Link>
         </div>
       </div>
     </div>

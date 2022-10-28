@@ -71,8 +71,9 @@ function Cart(product) {
               </button>
               <div className="price">
                 {" "}
-                <h5>$10</h5>
                 <h6>${price}</h6>
+
+                <h5>$10</h5>
               </div>
             </div>
           </div>

@@ -92,12 +92,12 @@ export default function Shoppingcart() {
   if (!(selectedProduct == 0)) {
     return (
       <div>
-          <div >
-            <Promo/>
-            <Head />
-          </div>
+        <div >
+          <Promo />
+          <Head />
+        </div>
         <div className="shopcart">
-        
+
 
           <div>
             <h1 className="h1">Shopping Cart { }</h1>
@@ -118,14 +118,15 @@ export default function Shoppingcart() {
                         <h4>{title}</h4>
                         <div className="numItem">
                           {" "}
-                          <button
+                          <div>            <button
                             disabled={count[id] == 0 ? true : false}
                             onClick={() => Decrease(items)}
                           >
-                            {"<"}
+                            {"-"}
                           </button>
-                          {count[id]}
-                          <button onClick={() => Incraese(items)}>{">"}</button>
+                            {count[id]}
+                            <button onClick={() => Incraese(items)}>{"+"}</button>
+                            </div>
                         </div>
                       </div>
                     </div>
@@ -137,7 +138,7 @@ export default function Shoppingcart() {
                           remvBtn(items);
                         }}
                       >
-                        {"X  "}Remove
+                    <i class="fa-solid fa-trash"></i>
                       </button>
                     </div>
                   </div>
@@ -188,30 +189,30 @@ export default function Shoppingcart() {
             </div>
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     );
   } else if (selectedProduct == 0) {
     return (
       <div>
-            <Promo/>
-            <Head />
-      <div className="empty">
-        <img
-          className="emping"
-          src="https://www.svgrepo.com/show/17356/empty-cart.svg"
-          alt="Cart Empty Image "
-        />
-        <div className="coment">
-          {" "}
-          <h4>Your cart is empty! </h4>
+        <Promo />
+        <Head />
+        <div className="empty">
+          <img
+            className="emping"
+            src="https://www.svgrepo.com/show/17356/empty-cart.svg"
+            alt="Cart Empty Image "
+          />
+          <div className="coment">
+            {" "}
+            <h4>Your cart is empty! </h4>
 
-          <a href="/"> Go to Shopping</a>
+            <a href="/"> Go to Shopping</a>
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer/>
-      </div>
-      
+
     );
   }
 }
